@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Restaurant.Application\Restaurant.Application.csproj" />
+    <ProjectReference Include="..\Restaurant.Domain\Restaurant.Domain.csproj" />
+    <ProjectReference Include="..\Restaurant.Infra.Data\Restaurant.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>
