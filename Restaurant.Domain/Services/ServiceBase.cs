@@ -34,12 +34,12 @@ namespace Restaurant.Domain.Services
             repository.Delete(entity);
         }
 
-        public TEntity getById(int id)
+        public TEntity GetById(int id)
         {
             return repository.GetByid(id);
         }
 
-        public IEnumerable<TEntity> getAll()
+        public IEnumerable<TEntity> GetAll()
         {
             return repository.GetAll();
         }
