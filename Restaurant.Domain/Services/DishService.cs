@@ -4,7 +4,7 @@ using Restaurant.Domain.Interfaces.Services;
 
 namespace Restaurant.Domain.Services
 {
-    class DishService<Entity> : ServiceBase<Dish>, IDishService
+    public class DishService : ServiceBase<Dish>, IDishService
     {
         public DishService(IDishRepository repository) : base(repository)
         {
