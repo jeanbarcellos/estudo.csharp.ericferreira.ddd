@@ -21,7 +21,7 @@ namespace Restaurant.Domain.Services
 
         public void Update(TEntity entity)
         {
-            repository.Upadte(entity);
+            repository.Update(entity);
         }
 
         public void Delete(int id)
