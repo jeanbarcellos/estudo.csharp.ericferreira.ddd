@@ -5,7 +5,6 @@ using Restaurant.Domain.Interfaces.Repositories;
 using Restaurant.Domain.Interfaces.Services;
 using Restaurant.Domain.Services;
 using Restaurant.Infra.Data.Repositories;
-using System;
 
 namespace Restaurant.Infra.IoC
 {
@@ -14,10 +13,10 @@ namespace Restaurant.Infra.IoC
         public static void Register(IServiceCollection svcCollection)
         {
             // Application
-            svcCollection.AddScoped(typeof(IAppBase<,>), typeof(ServiceAppBase<,>);
+            svcCollection.AddScoped(typeof(IAppBase<,>), typeof(ServiceAppBase<,>));
             svcCollection.AddScoped<IDishApp, DishApp>();
 
-            // Domain           
+            // Domain
             svcCollection.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
             svcCollection.AddScoped<IDishService, DishService>();
 
