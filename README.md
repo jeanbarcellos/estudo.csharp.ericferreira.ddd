@@ -16,11 +16,11 @@
 
   Referências:
 
-  - Domain
+  - `Domain`
 
   Pacotes:
 
-  - AutoMapper.Extensions.Microsoft.DependencyInjection
+  - `AutoMapper.Extensions.Microsoft.DependencyInjection`
 
   Diretórios:
 
@@ -73,6 +73,10 @@
 
     - Microsoft.Extensions.DependencyInjection
 
+    Implmenração:
+
+    - DependencyInjector.cs
+
 - **Services**
 
   Através desta camada que as aplicações se comunicarão com a nossa arquitetura, para que possamos buscar ou persistir informações
@@ -92,3 +96,11 @@
   - Microsoft.Extensions.DependencyInjection:
 
     Para que possamos realizarmos a injeção de tudo o que já fizemos na nossa API.
+
+  Diretórios:
+
+  - Controllers
+
+- **Presentation**
+
+  Front-end React, Angular, etc ...
