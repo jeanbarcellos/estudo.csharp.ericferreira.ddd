@@ -72,3 +72,23 @@
     Pacotes:
 
     - Microsoft.Extensions.DependencyInjection
+
+- **Services**
+
+  Através desta camada que as aplicações se comunicarão com a nossa arquitetura, para que possamos buscar ou persistir informações
+
+  Referências:
+
+  - Application
+  - Infra.IoC
+
+  Pacotes:
+
+  - ~~Pomelo.EntityFrameworkCore.MySql~~
+  - Npgsql.EntityFrameworkCore.PostgreSQL
+
+    Para que a API reconheça o futuro contexto que criaremos para conexão ao banco ~~MySQL~~ PostgreSQL.
+
+  - Microsoft.Extensions.DependencyInjection:
+
+    Para que possamos realizarmos a injeção de tudo o que já fizemos na nossa API.
