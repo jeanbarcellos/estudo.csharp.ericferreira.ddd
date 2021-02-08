@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Restaurant.Domain.Entities;
 using Restaurant.Domain.Interfaces.Repositories;
 using Restaurant.Infra.Data.Contexts;
@@ -21,16 +21,21 @@ namespace Restaurant.Infra.Data.Repositories
         public int Insert(TEntity entity)
         {
             context.InitTransaction();
+
             var id = context.Set<TEntity>().Add(entity).Entity.Id;
+
             context.SendChanges();
+
             return id;
         }
 
         public void Update(TEntity entity)
         {
             context.InitTransaction();
+
             context.Set<TEntity>().Attach(entity);
             context.Entry(entity).State = EntityState.Modified;
+
             context.SendChanges();
         }
 

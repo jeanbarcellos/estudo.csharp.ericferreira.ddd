@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Restaurant.Domain.Entities;
 using Restaurant.Infra.Data.Mappings;
@@ -21,18 +21,20 @@ namespace Restaurant.Infra.Data.Contexts
             }
         }
 
+        // Configurar o banco de dados (e outras opções) a ser usado para este contexto
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
         }
 
+        // configurar ainda mais o modelo que foi descoberto por convenção nos tipos de entidade
+        // expostos nas propriedades DbSet <TEntity>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new DishMap());
         }
-
 
         public IDbContextTransaction InitTransaction()
         {
@@ -81,7 +83,6 @@ namespace Restaurant.Infra.Data.Contexts
             Save();
             Commit();
         }
-
 
     }
 }

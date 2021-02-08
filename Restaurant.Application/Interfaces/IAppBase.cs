@@ -1,4 +1,4 @@
-﻿using Restaurant.Application.DTO;
+using Restaurant.Application.DTO;
 using Restaurant.Domain.Entities;
 using System.Collections.Generic;
 
@@ -8,10 +8,10 @@ namespace Restaurant.Application.Interfaces
         where TEntity : EntityBase
         where TEntityDTO : DTOBase
     {
-        int Insert(TEntityDTO entidade);
-        void Update(TEntityDTO entidade);
+        int Insert(TEntityDTO entityDTO);
+        void Update(TEntityDTO entityDTO);
         void Delete(int id);
-        void Delete(TEntityDTO entidade);
+        void Delete(TEntityDTO entityDTO);
         TEntityDTO GetById(int id);
         IEnumerable<TEntityDTO> GetAll();
 

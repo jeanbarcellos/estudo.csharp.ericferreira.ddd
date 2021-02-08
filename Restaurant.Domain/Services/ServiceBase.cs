@@ -1,11 +1,12 @@
-﻿using Restaurant.Domain.Entities;
+using Restaurant.Domain.Entities;
 using Restaurant.Domain.Interfaces.Repositories;
 using Restaurant.Domain.Interfaces.Services;
 using System.Collections.Generic;
 
 namespace Restaurant.Domain.Services
 {
-    public class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : EntityBase
+    public class ServiceBase<TEntity> : IServiceBase<TEntity>
+        where TEntity : EntityBase
     {
         protected readonly IRepositoryBase<TEntity> repository;
 

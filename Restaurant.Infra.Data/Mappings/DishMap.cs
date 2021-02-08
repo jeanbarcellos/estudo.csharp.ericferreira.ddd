@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Restaurant.Domain.Entities;
 
@@ -13,9 +13,9 @@ namespace Restaurant.Infra.Data.Mappings
             builder.ToTable("dish");
 
             builder.Property(c => c.Name)
-                .IsRequired()
+                .HasColumnName("name")
                 .HasMaxLength(100)
-                .HasColumnName("name");
+                .IsRequired();
 
             builder.Property(c => c.Price)
                 .HasColumnName("preco")

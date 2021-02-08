@@ -1,4 +1,4 @@
-﻿using Restaurant.Domain.Entities;
+using Restaurant.Domain.Entities;
 
 namespace Restaurant.Domain.Interfaces.Services
 {

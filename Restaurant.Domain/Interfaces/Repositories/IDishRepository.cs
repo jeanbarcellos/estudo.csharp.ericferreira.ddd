@@ -1,8 +1,8 @@
-﻿using Restaurant.Domain.Entities;
+using Restaurant.Domain.Entities;
 
 namespace Restaurant.Domain.Interfaces.Repositories
 {
-    public interface IDishRepository: IRepositoryBase<Dish>
+    public interface IDishRepository : IRepositoryBase<Dish>
     {
 
     }

@@ -31,7 +31,6 @@ namespace Restaurant.Services.Api
             // AutoMapper
             services.AddAutoMapper(x => x.AddProfile(new MappingEntity()));
 
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

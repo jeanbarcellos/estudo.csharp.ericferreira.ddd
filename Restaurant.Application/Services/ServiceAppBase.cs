@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Restaurant.Application.DTO;
 using Restaurant.Application.Interfaces;
 using Restaurant.Domain.Entities;
@@ -13,7 +13,7 @@ namespace Restaurant.Application.Services
     {
 
         protected readonly IMapper iMapper;
-        protected readonly IServiceBase<TEntity> service;
+        protected readonly IServiceBase<TEntity> service; // Domain Service
 
         public ServiceAppBase(IMapper iMapper, IServiceBase<TEntity> service)
         {
@@ -21,14 +21,18 @@ namespace Restaurant.Application.Services
             this.service = service;
         }
 
-        public int Insert(TEntityDTO entity)
+        public int Insert(TEntityDTO entityDTO)
         {
-            return service.Insert(iMapper.Map<TEntity>(entity));
+            // "Converte"/Mapeia um objeto DTO para Entity
+            TEntity entity = iMapper.Map<TEntity>(entityDTO);
+
+            // Chama o Domain Service
+            return service.Insert(entity);
         }
 
-        public void Update(TEntityDTO entity)
+        public void Update(TEntityDTO entityDTO)
         {
-            service.Update(iMapper.Map<TEntity>(entity));
+            service.Update(iMapper.Map<TEntity>(entityDTO));
         }
 
         public void Delete(int id)
@@ -36,9 +40,9 @@ namespace Restaurant.Application.Services
             service.Delete(id);
         }
 
-        public void Delete(TEntityDTO entity)
+        public void Delete(TEntityDTO entityDTO)
         {
-            service.Delete(iMapper.Map<TEntity>(entity));
+            service.Delete(iMapper.Map<TEntity>(entityDTO));
         }
 
         public TEntityDTO GetById(int id)

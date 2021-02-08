@@ -1,9 +1,10 @@
-﻿using Restaurant.Domain.Entities;
+using Restaurant.Domain.Entities;
 using System.Collections.Generic;
 
 namespace Restaurant.Domain.Interfaces.Services
 {
-    public interface IServiceBase<TEntity> where TEntity : EntityBase
+    public interface IServiceBase<TEntity>
+        where TEntity : EntityBase
     {
         int Insert(TEntity entity);
         void Update(TEntity entity);

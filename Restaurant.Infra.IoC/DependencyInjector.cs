@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Restaurant.Application.Interfaces;
 using Restaurant.Application.Services;
 using Restaurant.Domain.Interfaces.Repositories;
@@ -20,7 +20,7 @@ namespace Restaurant.Infra.IoC
             svcCollection.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
             svcCollection.AddScoped<IDishService, DishService>();
 
-            // Repository
+            // Infra.Data
             svcCollection.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             svcCollection.AddScoped<IDishRepository, DishRepository>();
         }

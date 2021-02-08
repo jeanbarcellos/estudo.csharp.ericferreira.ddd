@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Restaurant.Application.DTO;
 using Restaurant.Application.Interfaces;
 using Restaurant.Domain.Entities;
