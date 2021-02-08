@@ -41,7 +41,7 @@ namespace Restaurant.Infra.Data.Repositories
 
         public void Delete(int id)
         {
-            var entity = GetByid(id);
+            var entity = FindById(id);
             if (entity != null)
             {
                 Delete(entity);
@@ -55,12 +55,12 @@ namespace Restaurant.Infra.Data.Repositories
             context.SendChanges();
         }
 
-        public TEntity GetByid(int id)
+        public TEntity FindById(int id)
         {
             return context.Set<TEntity>().Find(id);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public IEnumerable<TEntity> FindAll()
         {
             return context.Set<TEntity>().ToList();
         }

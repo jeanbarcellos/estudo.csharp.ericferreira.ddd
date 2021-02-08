@@ -10,7 +10,7 @@ namespace Restaurant.Domain.Interfaces.Repositories
         void Update(TEntity entity);
         void Delete(int id);
         void Delete(TEntity entity);
-        TEntity GetByid(int id);
-        IEnumerable<TEntity> GetAll();
+        TEntity FindById(int id);
+        IEnumerable<TEntity> FindAll();
     }
 }

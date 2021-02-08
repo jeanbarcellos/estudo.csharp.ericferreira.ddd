@@ -37,12 +37,12 @@ namespace Restaurant.Domain.Services
 
         public TEntity GetById(int id)
         {
-            return repository.GetByid(id);
+            return repository.FindById(id);
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return repository.GetAll();
+            return repository.FindAll();
         }
 
     }

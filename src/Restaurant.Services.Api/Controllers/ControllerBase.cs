@@ -20,7 +20,7 @@ namespace Restaurant.Services.Api.Controllers
 
         [HttpGet]
         [Route("")]
-        public IActionResult List()
+        public IActionResult GetAll()
         {
             try
             {
