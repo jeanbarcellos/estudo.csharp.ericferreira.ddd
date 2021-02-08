@@ -13,8 +13,8 @@ namespace Restaurant.Infra.IoC
         public static void Register(IServiceCollection svcCollection)
         {
             // Application
-            svcCollection.AddScoped(typeof(IAppBase<,>), typeof(ServiceAppBase<,>));
-            svcCollection.AddScoped<IDishApp, DishApp>();
+            svcCollection.AddScoped(typeof(IAppServiceBase<,>), typeof(AppServiceBase<,>));
+            svcCollection.AddScoped<IDishAppService, DishAppService>();
 
             // Domain
             svcCollection.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));

@@ -6,9 +6,9 @@ using Restaurant.Domain.Interfaces.Services;
 
 namespace Restaurant.Application.Services
 {
-    public class DishApp : ServiceAppBase<Dish, DishDTO>, IDishApp
+    public class DishAppService : AppServiceBase<Dish, DishDTO>, IDishAppService
     {
-        public DishApp(IMapper iMapper, IDishService service) : base(iMapper, service)
+        public DishAppService(IMapper iMapper, IDishService service) : base(iMapper, service)
         {
 
         }

@@ -11,11 +11,11 @@ namespace Restaurant.Services.Api.Controllers
         where Entity : EntityBase
         where EntityDTO : DTOBase
     {
-        readonly protected IAppBase<Entity, EntityDTO> app;
+        readonly protected IAppServiceBase<Entity, EntityDTO> appService;
 
-        public ControllerBase(IAppBase<Entity, EntityDTO> app)
+        public ControllerBase(IAppServiceBase<Entity, EntityDTO> appService)
         {
-            this.app = app;
+            this.appService = appService;
         }
 
         [HttpGet]
@@ -24,7 +24,7 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                var restaurants = app.GetAll();
+                var restaurants = appService.GetAll();
                 return new OkObjectResult(restaurants);
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                var restaurants = app.GetById(id);
+                var restaurants = appService.GetById(id);
                 return new OkObjectResult(restaurants);
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                return new OkObjectResult(app.Insert(data));
+                return new OkObjectResult(appService.Insert(data));
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                app.Update(data);
+                appService.Update(data);
                 return new OkObjectResult(true);
             }
             catch (Exception ex)
@@ -87,7 +87,7 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                app.Delete(id);
+                appService.Delete(id);
                 return new OkObjectResult(true);
             }
             catch (Exception ex)

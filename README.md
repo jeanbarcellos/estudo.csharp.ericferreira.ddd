@@ -73,7 +73,7 @@ Camada que da suporte as demais camadas. Que atualmente é dividida por duas cam
 
 ### **Comunição entre camadas**
 
-**01 - Apresentação**: recebe referência de “_Aplicação_”, “_Domínio_” e da “_CrossCutting_” (em “_Infraestrutura_”), em casos de aplicações front-end a comunicação é feita unicamente com a cama de “_Serviços_” (API, por exemplo).
+**01 - Apresentação**: recebe referência de “_Aplicação_”, “_Domínio_” e da “_CrossCutting_” (em “_Infraestrutura_”). Em casos de aplicações front-end a comunicação é feita unicamente com a cama de “_Serviços_” (API, por exemplo).
 
 **02 - Serviços**: recebe referência de “_Aplicação_”.
 

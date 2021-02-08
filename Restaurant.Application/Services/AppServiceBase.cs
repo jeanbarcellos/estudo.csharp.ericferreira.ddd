@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Restaurant.Application.Services
 {
-    public class ServiceAppBase<TEntity, TEntityDTO> : IAppBase<TEntity, TEntityDTO>
+    public class AppServiceBase<TEntity, TEntityDTO> : IAppServiceBase<TEntity, TEntityDTO>
         where TEntity : EntityBase
         where TEntityDTO : DTOBase
     {
@@ -15,7 +15,7 @@ namespace Restaurant.Application.Services
         protected readonly IMapper iMapper;
         protected readonly IServiceBase<TEntity> service; // Domain Service
 
-        public ServiceAppBase(IMapper iMapper, IServiceBase<TEntity> service)
+        public AppServiceBase(IMapper iMapper, IServiceBase<TEntity> service)
         {
             this.iMapper = iMapper;
             this.service = service;

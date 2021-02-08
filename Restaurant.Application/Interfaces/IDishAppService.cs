@@ -3,7 +3,7 @@ using Restaurant.Domain.Entities;
 
 namespace Restaurant.Application.Interfaces
 {
-    public interface IDishApp : IAppBase<Dish, DishDTO>
+    public interface IDishAppService : IAppServiceBase<Dish, DishDTO>
     {
 
     }

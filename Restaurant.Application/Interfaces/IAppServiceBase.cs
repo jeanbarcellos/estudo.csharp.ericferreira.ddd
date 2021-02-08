@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Restaurant.Application.Interfaces
 {
-    public interface IAppBase<TEntity, TEntityDTO>
+    public interface IAppServiceBase<TEntity, TEntityDTO>
         where TEntity : EntityBase
         where TEntityDTO : DTOBase
     {

@@ -6,7 +6,7 @@ namespace Restaurant.Services.Api.Controllers
 {
     public class DishController : ControllerBase<Dish, DishDTO>
     {
-        public DishController(IDishApp app) : base(app)
+        public DishController(IDishAppService app) : base(app)
         {
 
         }
