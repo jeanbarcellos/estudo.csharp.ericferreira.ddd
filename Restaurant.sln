@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Services.Api", "Restaurant.Services.Api\Restaurant.Services.Api.csproj", "{20D45845-02F6-4EEA-A80A-C231261BA25B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Presentation", "01 - Presentation", "{63E814B5-26D0-41BF-A117-FFE03FDC9F49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Services", "02 - Services", "{C4872A4D-D2F3-4D41-A88B-41B1BAA66B9C}"
@@ -15,13 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Domain", "04 - Domain"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Infra", "05 - Infra", "{785E5A7C-CECF-4B06-9AF3-5CADDC68A49E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Application", "Restaurant.Application\Restaurant.Application.csproj", "{D15DDFA0-9179-4A0A-9415-DB9ACCE9597C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Services.Api", "src\Restaurant.Services.Api\Restaurant.Services.Api.csproj", "{20D45845-02F6-4EEA-A80A-C231261BA25B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Domain", "Restaurant.Domain\Restaurant.Domain.csproj", "{1455BB52-51CA-400D-AA78-DE7CACF45D0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Application", "src\Restaurant.Application\Restaurant.Application.csproj", "{D15DDFA0-9179-4A0A-9415-DB9ACCE9597C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Infra.Data", "Restaurant.Infra.Data\Restaurant.Infra.Data.csproj", "{513DB1D8-6803-413B-BB31-3A436A1FC44B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Domain", "src\Restaurant.Domain\Restaurant.Domain.csproj", "{1455BB52-51CA-400D-AA78-DE7CACF45D0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Infra.IoC", "Restaurant.Infra.IoC\Restaurant.Infra.IoC.csproj", "{EADAC6F6-BE87-43B3-BF52-54704CBC07DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Infra.Data", "src\Restaurant.Infra.Data\Restaurant.Infra.Data.csproj", "{513DB1D8-6803-413B-BB31-3A436A1FC44B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurant.Infra.IoC", "src\Restaurant.Infra.IoC\Restaurant.Infra.IoC.csproj", "{EADAC6F6-BE87-43B3-BF52-54704CBC07DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
