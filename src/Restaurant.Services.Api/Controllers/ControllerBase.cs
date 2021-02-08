@@ -65,7 +65,7 @@ namespace Restaurant.Services.Api.Controllers
         }
 
         [HttpPut]
-        [Route("")]
+        [Route("{id}")]
         public IActionResult Update([FromBody] EntityDTO data)
         {
             try
@@ -82,7 +82,7 @@ namespace Restaurant.Services.Api.Controllers
 
 
         [HttpDelete]
-        [Route("id")]
+        [Route("{id}")]
         public IActionResult Delete(int id)
         {
             try
