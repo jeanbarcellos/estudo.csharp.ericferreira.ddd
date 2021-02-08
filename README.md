@@ -200,3 +200,46 @@ Camada que da suporte as demais camadas. Que atualmente é dividida por duas cam
 - **Presentation**
 
   Front-end React, Angular, etc ...
+
+<br>
+<br>
+<hr>
+
+### Criando as Migrations
+
+Acessar o diretório `Restaurant.Services.Api`
+
+Instsalar o pacote:
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+
+Acessar o diretório `Restaurant.Infra.Data`
+
+Executar o comando para gerar as migrações:
+
+```
+dotnet ef --startup-project ../Restaurant.Services.Api/ --project ./Restaurant.Infra.Data.csproj migrations add Initial
+```
+
+- Observe que no comando definimos o projeto startup como sendo o projeto `Restaurant.Services.Api` que contém a string de conexão e o projeto `Restaurant.Infra.Data` onde temos as referências ao `EntityFramework`.
+- Tabmém foi preciso instalar o pacote `Microsoft.EntityFrameworkCore.Design` em `Restaurant.Services.Api`
+
+Executar o domando para aplicar as Migrações no banco de dados:
+
+```
+dotnet ef --startup-project ../Restaurant.Services.Api --project ./Restaurant.Infra.Data.csproj database update
+```
+
+<br>
+<br>
+<hr>
+
+### Executar o projeto
+
+Estando no diretório raiz
+
+```
+dotnet watch -p src/Restaurant.Services.Api/Application.csproj run
+```
