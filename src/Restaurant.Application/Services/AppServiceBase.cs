@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Restaurant.Application.Services
 {
-    public class AppServiceBase<TEntity, TEntityDTO> : IAppServiceBase<TEntity, TEntityDTO>
+    abstract public class AppServiceBase<TEntity, TEntityDTO> : IAppServiceBase<TEntity, TEntityDTO>
         where TEntity : EntityBase
         where TEntityDTO : DTOBase
     {

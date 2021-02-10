@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Restaurant.Infra.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity>
+    abstract public class RepositoryBase<TEntity> : IRepositoryBase<TEntity>
         where TEntity : EntityBase
     {
         protected readonly Context context;

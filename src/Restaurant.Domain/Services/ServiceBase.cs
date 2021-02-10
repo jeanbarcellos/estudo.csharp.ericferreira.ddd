@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Restaurant.Domain.Services
 {
-    public class ServiceBase<TEntity> : IServiceBase<TEntity>
+    abstract public class ServiceBase<TEntity> : IServiceBase<TEntity>
         where TEntity : EntityBase
     {
         protected readonly IRepositoryBase<TEntity> repository;

@@ -1,6 +1,6 @@
 namespace Restaurant.Domain.Entities
 {
-    public class EntityBase
+    abstract public class EntityBase
     {
         public int Id { get; set; }
     }

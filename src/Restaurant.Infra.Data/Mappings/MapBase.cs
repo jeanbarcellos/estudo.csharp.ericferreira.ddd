@@ -4,7 +4,7 @@ using Restaurant.Domain.Entities;
 
 namespace Restaurant.Infra.Data.Mappings
 {
-    public class MapBase<T> : IEntityTypeConfiguration<T>
+    abstract public class MapBase<T> : IEntityTypeConfiguration<T>
         where T : EntityBase
     {
         public virtual void Configure(EntityTypeBuilder<T> builder)

@@ -7,7 +7,7 @@ using System;
 namespace Restaurant.Services.Api.Controllers
 {
     [Route("api/[controller]")]
-    public class ControllerBase<Entity, EntityDTO> : Controller
+    abstract public class ControllerBase<Entity, EntityDTO> : Controller
         where Entity : EntityBase
         where EntityDTO : DTOBase
     {
