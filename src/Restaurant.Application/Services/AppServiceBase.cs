@@ -12,19 +12,19 @@ namespace Restaurant.Application.Services
         where TEntityDTO : DTOBase
     {
 
-        protected readonly IMapper iMapper;
+        protected readonly IMapper mapper;
         protected readonly IServiceBase<TEntity> service; // Domain Service
 
-        public AppServiceBase(IMapper iMapper, IServiceBase<TEntity> service)
+        public AppServiceBase(IMapper mapper, IServiceBase<TEntity> service)
         {
-            this.iMapper = iMapper;
+            this.mapper = mapper;
             this.service = service;
         }
 
         public int Insert(TEntityDTO entityDTO)
         {
             // "Converte"/Mapeia um objeto DTO para Entity
-            TEntity entity = iMapper.Map<TEntity>(entityDTO);
+            TEntity entity = mapper.Map<TEntity>(entityDTO);
 
             // Chama o Domain Service
             return service.Insert(entity);
@@ -32,7 +32,7 @@ namespace Restaurant.Application.Services
 
         public void Update(TEntityDTO entityDTO)
         {
-            service.Update(iMapper.Map<TEntity>(entityDTO));
+            service.Update(mapper.Map<TEntity>(entityDTO));
         }
 
         public void Delete(int id)
@@ -42,17 +42,17 @@ namespace Restaurant.Application.Services
 
         public void Delete(TEntityDTO entityDTO)
         {
-            service.Delete(iMapper.Map<TEntity>(entityDTO));
+            service.Delete(mapper.Map<TEntity>(entityDTO));
         }
 
         public TEntityDTO GetById(int id)
         {
-            return iMapper.Map<TEntityDTO>(service.GetById(id));
+            return mapper.Map<TEntityDTO>(service.GetById(id));
         }
 
         public IEnumerable<TEntityDTO> GetAll()
         {
-            return iMapper.Map<IEnumerable<TEntityDTO>>(service.GetAll());
+            return mapper.Map<IEnumerable<TEntityDTO>>(service.GetAll());
         }
 
     }

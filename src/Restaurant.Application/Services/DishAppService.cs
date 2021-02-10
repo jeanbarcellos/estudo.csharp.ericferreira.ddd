@@ -8,7 +8,7 @@ namespace Restaurant.Application.Services
 {
     public class DishAppService : AppServiceBase<Dish, DishDTO>, IDishAppService
     {
-        public DishAppService(IMapper iMapper, IDishService service) : base(iMapper, service)
+        public DishAppService(IMapper mapper, IDishService service) : base(mapper, service)
         {
 
         }
