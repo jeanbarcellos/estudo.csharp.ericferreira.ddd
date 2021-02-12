@@ -1,13 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using Restaurant.Application;
-using Restaurant.Infra.Data.Contexts;
-using Restaurant.Infra.IoC;
+using Restaurant.Services.Api.Configurations;
 
 namespace Restaurant.Services.Api
 {
@@ -22,20 +18,20 @@ namespace Restaurant.Services.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Context
-            services.AddDbContext<Context>(opts => opts.UseNpgsql(Configuration.GetConnectionString("Default")));
+            // WebAPI Config
+            services.AddControllers();
+
+            // DBContexts Config
+            services.AddDatabseConfiguration(Configuration);
 
             // Injeção de dependência
-            DependencyInjector.Register(services);
+            services.AddDependencyInjectionConfiguration();
 
-            // AutoMapper
-            services.AddAutoMapper(x => x.AddProfile(new MappingEntity()));
+            // AutoMapper Settings
+            services.AddAutoMapperConfiguration();
 
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Restaurant.Services.Api", Version = "v1" });
-            });
+            // Swagger Config
+            services.AddSwaggerConfiguration();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -43,8 +39,8 @@ namespace Restaurant.Services.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Restaurant.Services.Api v1"));
+
+                app.UseSwaggerSetup();
             }
 
             app.UseHttpsRedirection();
