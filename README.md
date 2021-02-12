@@ -139,7 +139,7 @@ Camada que da suporte as demais camadas. Que atualmente é dividida por duas cam
 
     Referências:
 
-    - Domain
+    - `Domain`
 
     Pacotes:
 
@@ -156,9 +156,9 @@ Camada que da suporte as demais camadas. Que atualmente é dividida por duas cam
 
       - `Context.cs`
 
-    - Data.**Mapeamentos**: Classes onde fazemos o mapeamento das entidades como tabelas do banco de dados, onde a nome da tabela é a própria entidade e as colunas são as propriedades desta entidade.
-
     - Data.**Repositories**: estes serão os repositórios, onde são realizadas as consultas e inserções do banco de dados, tudo isso usando o `Context`. É aqui são implementadas as interfaces de repositórios criadas em `Domain`.
+
+    - Data.**Mappings**: Classes onde fazemos o mapeamento das entidades como tabelas do banco de dados, onde a nome da tabela é a própria entidade e as colunas são as propriedades desta entidade.
 
   - Infra.**IoC**:
 
@@ -166,15 +166,15 @@ Camada que da suporte as demais camadas. Que atualmente é dividida por duas cam
 
     Referencias:
 
-    - Domain
-    - Application
-    - Infra.Data
+    - `Domain`
+    - `Application`
+    - `Infra.Data`
 
     Pacotes:
 
     - `Microsoft.Extensions.DependencyInjection`
 
-    Implmenração:
+    Arquivos:
 
     - DependencyInjector.cs
 
@@ -184,8 +184,8 @@ Camada que da suporte as demais camadas. Que atualmente é dividida por duas cam
 
   Referências:
 
-  - Application
-  - Infra.IoC
+  - `Application`
+  - `Infra.IoC`
 
   Pacotes:
 
@@ -241,5 +241,5 @@ dotnet ef --startup-project ../Restaurant.Services.Api --project ./Restaurant.In
 Estando no diretório raiz
 
 ```
-dotnet watch -p src/Restaurant.Services.Api/Application.csproj run
+dotnet watch -p src/Restaurant.Services.Api/Restaurant.Services.Api.csproj run
 ```
