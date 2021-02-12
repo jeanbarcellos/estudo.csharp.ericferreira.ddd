@@ -5,44 +5,44 @@ using System.Collections.Generic;
 
 namespace Restaurant.Domain.Services
 {
-    abstract public class ServiceBase<TEntity> : IServiceBase<TEntity>
+    public class ServiceBase<TEntity> : IServiceBase<TEntity>
         where TEntity : EntityBase
     {
-        protected readonly IRepositoryBase<TEntity> repository;
+        protected readonly IRepositoryBase<TEntity> _repository;
 
         public ServiceBase(IRepositoryBase<TEntity> repository)
         {
-            this.repository = repository;
+            _repository = repository;
         }
 
         public int Insert(TEntity entity)
         {
-            return repository.Insert(entity);
+            return _repository.Insert(entity);
         }
 
         public void Update(TEntity entity)
         {
-            repository.Update(entity);
+            _repository.Update(entity);
         }
 
         public void Delete(int id)
         {
-            repository.Delete(id);
+            _repository.Delete(id);
         }
 
         public void Delete(TEntity entity)
         {
-            repository.Delete(entity);
+            _repository.Delete(entity);
         }
 
         public TEntity GetById(int id)
         {
-            return repository.FindById(id);
+            return _repository.FindById(id);
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return repository.FindAll();
+            return _repository.FindAll();
         }
 
     }

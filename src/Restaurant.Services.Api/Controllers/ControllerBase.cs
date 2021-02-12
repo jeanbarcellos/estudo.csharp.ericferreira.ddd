@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Restaurant.Application.DTO;
 using Restaurant.Application.Interfaces;
 using Restaurant.Domain.Entities;
+using Restaurant.Domain.Interfaces.Services;
 using System;
 
 namespace Restaurant.Services.Api.Controllers
@@ -11,20 +12,21 @@ namespace Restaurant.Services.Api.Controllers
         where Entity : EntityBase
         where EntityDTO : DTOBase
     {
-        readonly protected IAppServiceBase<Entity, EntityDTO> appService;
+        readonly protected IAppServiceBase<Entity, EntityDTO> _appService;
 
         public ControllerBase(IAppServiceBase<Entity, EntityDTO> appService)
         {
-            this.appService = appService;
+            _appService = appService;
         }
 
         [HttpGet]
         [Route("")]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromServices] IDishService service)
         {
             try
             {
-                var restaurants = appService.GetAll();
+                var restaurants = _appService.GetAll();
+
                 return new OkObjectResult(restaurants);
             }
             catch (Exception ex)
@@ -40,7 +42,8 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                var restaurants = appService.GetById(id);
+                var restaurants = _appService.GetById(id);
+
                 return new OkObjectResult(restaurants);
             }
             catch (Exception ex)
@@ -55,13 +58,12 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                return new OkObjectResult(appService.Insert(data));
+                return new OkObjectResult(_appService.Insert(data));
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-
         }
 
         [HttpPut]
@@ -70,7 +72,8 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                appService.Update(data);
+                _appService.Update(data);
+
                 return new OkObjectResult(true);
             }
             catch (Exception ex)
@@ -87,7 +90,8 @@ namespace Restaurant.Services.Api.Controllers
         {
             try
             {
-                appService.Delete(id);
+                _appService.Delete(id);
+
                 return new OkObjectResult(true);
             }
             catch (Exception ex)

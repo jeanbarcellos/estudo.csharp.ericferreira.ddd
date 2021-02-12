@@ -7,53 +7,51 @@ using System.Collections.Generic;
 
 namespace Restaurant.Application.Services
 {
-    abstract public class AppServiceBase<TEntity, TEntityDTO> : IAppServiceBase<TEntity, TEntityDTO>
+    public class AppServiceBase<TEntity, TEntityDTO> : IAppServiceBase<TEntity, TEntityDTO>
         where TEntity : EntityBase
         where TEntityDTO : DTOBase
     {
-
-        protected readonly IMapper mapper;
-        protected readonly IServiceBase<TEntity> service; // Domain Service
+        protected readonly IMapper _mapper;
+        protected readonly IServiceBase<TEntity> _service; // Domain Service
 
         public AppServiceBase(IMapper mapper, IServiceBase<TEntity> service)
         {
-            this.mapper = mapper;
-            this.service = service;
+            _mapper = mapper;
+            _service = service;
         }
 
         public int Insert(TEntityDTO entityDTO)
         {
             // "Converte"/Mapeia um objeto DTO para Entity
-            TEntity entity = mapper.Map<TEntity>(entityDTO);
+            TEntity entity = _mapper.Map<TEntity>(entityDTO);
 
             // Chama o Domain Service
-            return service.Insert(entity);
+            return _service.Insert(entity);
         }
 
         public void Update(TEntityDTO entityDTO)
         {
-            service.Update(mapper.Map<TEntity>(entityDTO));
+            _service.Update(_mapper.Map<TEntity>(entityDTO));
         }
 
         public void Delete(int id)
         {
-            service.Delete(id);
+            _service.Delete(id);
         }
 
         public void Delete(TEntityDTO entityDTO)
         {
-            service.Delete(mapper.Map<TEntity>(entityDTO));
+            _service.Delete(_mapper.Map<TEntity>(entityDTO));
         }
 
         public TEntityDTO GetById(int id)
         {
-            return mapper.Map<TEntityDTO>(service.GetById(id));
+            return _mapper.Map<TEntityDTO>(_service.GetById(id));
         }
 
         public IEnumerable<TEntityDTO> GetAll()
         {
-            return mapper.Map<IEnumerable<TEntityDTO>>(service.GetAll());
+            return _mapper.Map<IEnumerable<TEntityDTO>>(_service.GetAll());
         }
-
     }
 }
