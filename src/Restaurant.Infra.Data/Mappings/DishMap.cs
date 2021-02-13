@@ -18,7 +18,7 @@ namespace Restaurant.Infra.Data.Mappings
                 .IsRequired();
 
             builder.Property(c => c.Price)
-                .HasColumnName("preco")
+                .HasColumnName("price")
                 .IsRequired();
         }
 
