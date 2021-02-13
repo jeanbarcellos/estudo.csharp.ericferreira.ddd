@@ -207,20 +207,21 @@ Camada que da suporte as demais camadas. Que atualmente é dividida por duas cam
 
 ### Criando as Migrations
 
-Acessar o diretório `Restaurant.Services.Api`
+Remover as sequintes linhas no arquivo o diretório `/src/Restaurant.Infra.Data/Restaurant.Infra.Data.csproj` em `<PackageReference Include="Microsoft.EntityFrameworkCore.Design" .....`
 
-Instsalar o pacote:
-
+```xml
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
 ```
-dotnet add package Microsoft.EntityFrameworkCore.Design
-```
-
-Acessar o diretório `Restaurant.Infra.Data`
 
 Executar o comando para gerar as migrações:
 
-```
+```bash
+# Se estiver dentro do diretório src/Restaurant.Infra.Data
 dotnet ef --startup-project ../Restaurant.Services.Api/ --project ./Restaurant.Infra.Data.csproj migrations add Initial
+
+# Se estiver na raiz do projeto
+dotnet ef --startup-project src/Restaurant.Services.Api/ --project ./src/Restaurant.Infra.Data/Restaurant.Infra.Data.csproj migrations add Initial
 ```
 
 - Observe que no comando definimos o projeto startup como sendo o projeto `Restaurant.Services.Api` que contém a string de conexão e o projeto `Restaurant.Infra.Data` onde temos as referências ao `EntityFramework`.
@@ -228,8 +229,12 @@ dotnet ef --startup-project ../Restaurant.Services.Api/ --project ./Restaurant.I
 
 Executar o domando para aplicar as Migrações no banco de dados:
 
-```
+```bash
+# Se estiver dentro do diretório src/Restaurant.Infra.Data
 dotnet ef --startup-project ../Restaurant.Services.Api --project ./Restaurant.Infra.Data.csproj database update
+
+# Se estiver na raiz do projeto
+dotnet ef --startup-project src/Restaurant.Services.Api/ --project ./src/Restaurant.Infra.Data/Restaurant.Infra.Data.csproj database update
 ```
 
 <br>
