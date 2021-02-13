@@ -9,7 +9,7 @@ using Restaurant.Infra.Data.Contexts;
 namespace Restaurant.Infra.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210208140950_Initial")]
+    [Migration("20210213182223_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace Restaurant.Infra.Data.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("double precision")
-                        .HasColumnName("preco");
+                        .HasColumnName("price");
 
                     b.HasKey("Id");
 

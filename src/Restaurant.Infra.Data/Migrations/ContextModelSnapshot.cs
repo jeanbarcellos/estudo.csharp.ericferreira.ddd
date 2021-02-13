@@ -34,7 +34,7 @@ namespace Restaurant.Infra.Data.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("double precision")
-                        .HasColumnName("preco");
+                        .HasColumnName("price");
 
                     b.HasKey("Id");
 
